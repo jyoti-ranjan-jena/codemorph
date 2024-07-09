@@ -4,17 +4,17 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { duotoneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-export default function CodeExplainerPage() {
+export default function CodeSuggestorPage() {
   const [inputCode, setInputCode] = useState("");
   const [outputText, setOutputText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleExplainCode = async () => {
+  const handleSuggestCode = async () => {
     setIsLoading(true);
 
     try {
       const response = await fetch(
-        "/api/projects/code_morph/models/codeexplainer/predict",
+        "/api/projects/code_morph/models/codesuggestor/predict", // Update this if needed
         {
           method: "POST",
           headers: {
@@ -23,7 +23,7 @@ export default function CodeExplainerPage() {
           body: JSON.stringify({
             data: [
               {
-                codeToExplain: inputCode,
+                codeToSuggest: inputCode,
               },
             ],
           }),
@@ -31,19 +31,20 @@ export default function CodeExplainerPage() {
       );
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorMessage = `HTTP error! status: ${response.status}`;
+        throw new Error(errorMessage);
       }
 
       const data = await response.json();
 
-      if (data && data[0] && data[0].codeExplanation) {
-        const res = data[0].codeExplanation;
+      if (data && data[0] && data[0].codeSuggestion) {
+        const res = data[0].codeSuggestion;
         setOutputText(res);
       } else {
-        console.log("Unexpected response structure");
+        console.log("Unexpected response structure", data);
       }
     } catch (error) {
-      console.error(error);
+      console.error("Error:", error);
     }
 
     setIsLoading(false);
@@ -57,7 +58,7 @@ export default function CodeExplainerPage() {
     <div className="bg-gray-200 min-h-screen flex flex-col items-center justify-center">
       {/* Header */}
       <header className="bg-blue-500 text-white py-4 px-6 flex items-center justify-between w-full fixed top-0 z-10">
-        <h1 className="text-2xl font-bold">Code Explainer</h1>
+        <h1 className="text-2xl font-bold">Code Suggestor</h1>
         <BackButton />
       </header>
 
@@ -75,16 +76,16 @@ export default function CodeExplainerPage() {
             />
             <button
               className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md mt-4 w-full"
-              onClick={handleExplainCode}
+              onClick={handleSuggestCode}
               disabled={isLoading}
             >
-              {isLoading ? "Loading..." : "Explain Code"}
+              {isLoading ? "Loading..." : "Suggest Improvements"}
             </button>
           </div>
 
           {/* Output Section */}
           <div className="flex-1 bg-white rounded-lg shadow-md p-4">
-            <h2 className="text-lg font-bold mb-4">Output:</h2>
+            <h2 className="text-lg font-bold mb-4">Suggestions:</h2>
             <div className="h-96 overflow-y-auto border border-gray-300 rounded-md px-4 py-2">
               <ReactMarkdown
                 children={outputText}

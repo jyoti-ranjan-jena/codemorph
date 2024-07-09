@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "wouter";
 import SVG from "../public/hero.svg";
+import CSVG from "../public/code.svg";
 
 export default function LandingPage() {
   return (
     <div className="flex flex-col gap-20">
       <main className="bg-white relative overflow-hidden">
-        <header className="h-24 sm:h-30 flex items-center z-30 w-full dark:bg-blue-900">
+        <header className="fixed inset-x-0 top-0 z-30 mx-auto w-full  bg-blue-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 py-4  md:rounded-3xl mt-0">
+        {/* <header className="h-24 sm:h-30 flex items-center z-30 w-full dark:bg-blue-900"> */}
           <div className="container mx-auto px-6 flex items-center justify-between">
             <div className="text-blue-900 font-black text-3xl">CodeMorph</div>
             <div className="flex items-center">
@@ -36,6 +38,12 @@ export default function LandingPage() {
                   Code Explainer
                 </Link>
                 <Link
+                  href="/code_suggestor"
+                  className="py-2 px-6 flex hover:underline hover:text-blue-900"
+                >
+                  Code Suggestor
+                </Link>
+                <Link
                   href="/about"
                   className="py-2 px-6 flex hover:underline hover:text-blue-900"
                 >
@@ -52,24 +60,23 @@ export default function LandingPage() {
         </header>
         <div
           id="hero"
-          className="bg-white dark:bg-gray-800 flex flex-row  items-center justify-center relative z-20 overflow-hidden"
+          className="bg-white dark:bg-gray-800 flex flex-row  items-center justify-center relative z-20 overflow-hidden mt-24"
         >
           <div className="container mx-auto px-6 flex flex-row items-center justify-center relative py-8 mt-0">
             <div className="sm:w-2/3 lg:w-2/5 flex flex-col align-middle justify-center relative z-20 text-left px-20 h-96">
-              <span className="w-24 h-3 bg-blue-900 dark:bg-blue-900 mb-8"></span>
-              <h1 className="font-bebas-neue  text-5xl font-black leading-none dark:text-white text-blue-900 mb-5">
-                CodeMorph
+              <img src={CSVG} alt="" className="w-16 text-blue-900 mb-5"/>
+              <h1 className="font-bebas-neue  text-4xl font-black leading-none dark:text-white text-blue-900 mb-5">
+                CodeMorph: Transform Your Code
               </h1>
-              <p className="text-xl sm:text-lg text-gray-700 dark:text-white mt-5">
-                Explore the future of coding with CodeMorph, where artificial
-                intelligence meets programming to effortlessly convert languages
-                and provide insightful code explanations.
+              <p className="text-xl  text-gray-700 dark:text-white mt-4">
+                Convert, explain, and optimize code effortlessly with AI-driven
+                insights.
               </p>
             </div>
             <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative h-full">
               <img
                 src={SVG}
-                className="max-w-xs md:max-w-xl h-full m-auto"
+                className="max-w-xs md:max-w-xl h-full m-auto ml-60"
                 alt="Illustration"
               />
             </div>
@@ -78,7 +85,7 @@ export default function LandingPage() {
       </main>
 
       {/* Why Choose Us */}
-      <div className="sm:flex items-center max-w-screen-xl">
+      <div className="sm:flex items-center max-w-screen-xl mx-auto">
         <div className="sm:w-1/2 p-10">
           <div className="image object-center text-center">
             <img src="https://i.imgur.com/WbQnbas.png" alt="About Us Image" />
@@ -200,10 +207,10 @@ export default function LandingPage() {
 
       {/* Open Source */}
       <div className="bg-blue-200 py-6 px-8 mt-8 w-[50%] mx-auto rounded-lg shadow-md text-center">
-        <p className="text-blue-900 text-lg font-semibold mb-2">
+        <p className="text-blue-900 text-2xl font-semibold mb-4">
           Open Source on GitHub
         </p>
-        <p className="text-blue-900 mb-4">
+        <p className="text-blue-900 mb-5">
           Explore our code repository on GitHub to see how we build and maintain
           our app. Your contributions are welcome!
         </p>
