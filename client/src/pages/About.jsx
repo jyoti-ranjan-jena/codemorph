@@ -19,7 +19,7 @@ export default function AboutUsPage() {
             CodeMorph is a revolutionary AI-powered tool designed to enhance
             coding experiences by automating language conversion and providing
             detailed code explanations. Built with technologies like Vite,
-            Tailwind CSS, React, MindSDB.CodeMorph aims to
+            Tailwind CSS, React and MindSDB.CodeMorph aims to
             simplify development processes and improve code quality.
           </p>
 
