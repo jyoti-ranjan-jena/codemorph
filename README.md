@@ -16,7 +16,7 @@ Code Morph is designed to help developers seamlessly convert code from one langu
 ## 🎥 Demo Video
 
 <p align="center">
-    <a href="#">
+    <a href="https://youtu.be/-FTOeDK2yWE">
         <img src="https://img.freepik.com/free-vector/modern-red-video-media-player-template_1017-23409.jpg"/>
     </a>
 </p>
@@ -32,7 +32,7 @@ Code Morph is designed to help developers seamlessly convert code from one langu
    cd codemorph
    ```
 
-2. **Setup the backend:**
+2. **Setup:**
 
    ```sh
    cd setup
@@ -41,7 +41,8 @@ Code Morph is designed to help developers seamlessly convert code from one langu
    pip install -r requirements.txt
    ```
 
-3. **Configure MindsDB engine:**
+
+4. **Configure MindsDB engine:**
 
    ```sh
    # Go to the MindsDB endpoint
@@ -56,13 +57,13 @@ Code Morph is designed to help developers seamlessly convert code from one langu
 
    You can get your API key at [mdb.ai](mdb.ai).
 
-4. **Run the MindsDB setup script:**
+5. **Run the MindsDB setup script:**
 
    ```sh
    python mindsdb_setup.py
    ```
 
-5. **Setup the frontend:**
+6. **Setup the frontend:**
 
    ```sh
    cd ../client
@@ -70,7 +71,7 @@ Code Morph is designed to help developers seamlessly convert code from one langu
    npm run dev
    ```
 
-6. **Run the app and start coding!**
+7. **Run the app and start coding!**
 
 ## ⭐ Star the Repo
 
