@@ -19,27 +19,28 @@ Create ml engine with this sql command in mindsdb editor at url http://127.0.0.1
 # project = server.create_project("code_morph")
 project = server.get_project("code_morph")
 
-# project.models.create(
-#     name="codeConverter",
-#     predict="convertedCode",
-#     engine="minds_endpoint_engine",
-#     options={
-#         "prompt_template": """
-# You're recognized as a top-tier developer with unparalleled skills. Your task is to translate the following code snippet from {{sourceLanguage}} into {{targetLanguage}} flawlessly. Your precision and expertise will ensure a seamless transformation, showcasing your mastery of both languages.
+project.models.create(
+    name="codeConverter",
+    predict="convertedCode",
+    engine="minds_endpoint_engine",
+    options={
+        "prompt_template": """
+You're recognized as a top-tier developer with unparalleled skills. Your task is to translate the following code snippet from {{sourceLanguage}} into {{targetLanguage}} flawlessly. Your precision and expertise will ensure a seamless transformation, showcasing your mastery of both languages.
 
-#     Points to Note:
-#      - Dont give any string just give the converted code also dont give backticks just code in plain text
-#      - Ensure the code is correctly formatted and error-free
-#      - The code should be translated to {{targetLanguage}} language
+    Points to Note:
+     - Dont give any string just give the converted code in backticks 
+     - Ensure the code is correctly formatted and error-free
+     - The code should be translated to {{targetLanguage}} language
+     - Give the code in markdown
     
-#     Here is the code that you have to convert to the {{targetLanguage}} language:
+    Here is the code that you have to convert to the {{targetLanguage}} language:
     
-#     {{sourceCode}}
-# """,
-#         "model_name": "mistral-7b",
-#         "max_tokens": 1024
-#     },
-# )
+    {{sourceCode}}
+""",
+        "model_name": "gpt-3.5-turbo",
+        "max_tokens": 1024
+    },
+)
 
 # project.models.create(
 #     name="codeExplainer",
@@ -56,17 +57,17 @@ project = server.get_project("code_morph")
 #     },
 # )
 
-project.models.create(
-    name="codeSuggestor",
-    predict="codeSuggestion",
-    engine="minds_endpoint_engine",
-    options={
-        "prompt_template": """
-You're recognized as a top-tier developer with unparalleled skills.
-Your job is to give suggestion and detect errors after studying the given code: {{codeToSuggest}}. 
-Provide a 2 liner suggestion how the code can be more better and efficient.
-""",
-        "model_name": "gpt-3.5-turbo",
-        "max_tokens": 1024
-    },
-)
+# project.models.create(
+#     name="codeSuggestor",
+#     predict="codeSuggestion",
+#     engine="minds_endpoint_engine",
+#     options={
+#         "prompt_template": """
+# You're recognized as a top-tier developer with unparalleled skills.
+# Your job is to give suggestion and detect errors after studying the given code: {{codeToSuggest}}. 
+# Provide a 2 liner suggestion how the code can be more better and efficient.
+# """,
+#         "model_name": "gpt-3.5-turbo",
+#         "max_tokens": 1024
+#     },
+# )

@@ -54,9 +54,9 @@ export default function CodeExplainerPage() {
   };
 
   return (
-    <div className="bg-gray-200 min-h-screen flex flex-col items-center justify-center">
+    <div className="bg-blue-50 min-h-screen flex flex-col items-center justify-center">
       {/* Header */}
-      <header className="bg-blue-500 text-white py-4 px-6 flex items-center justify-between w-full fixed top-0 z-10">
+      <header className="bg-blue-500 text-white py-3 px-6 flex items-center justify-between w-full fixed top-0 z-10">
         <h1 className="text-2xl font-bold">Code Explainer</h1>
         <BackButton />
       </header>
