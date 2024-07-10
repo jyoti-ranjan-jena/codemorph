@@ -80,8 +80,8 @@ If you like **Code Morph**, please give us a star ⭐
 
 Feel free to reach out for any questions, suggestions, or collaboration opportunities!
 
-- **Email:** yotiranjanjena256504@gmail.com
-- **GitHub:** [yourusername](https://github.com/jyoti-ranjan-jena)
+- **Email:** jyotiranjanjena256504@gmail.com
+- **GitHub:** [jyoti-ranjan-jena](https://github.com/jyoti-ranjan-jena)
 
 ---
 
