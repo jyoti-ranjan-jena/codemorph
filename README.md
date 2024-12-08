@@ -77,6 +77,8 @@ Code Morph is designed to help developers seamlessly convert code from one langu
 
 If you like **Code Morph**, please give us a star ⭐
 
+[![jyoti-ranjan-jena's GitHub | Languages Over Time](https://stats.quira.sh/jyoti-ranjan-jena/languages-over-time?theme=dark)](https://quira.sh?utm_source=widgets&utm_campaign=jyoti-ranjan-jena)
+
 ## 📞 Contact the Creator
 
 Feel free to reach out for any questions, suggestions, or collaboration opportunities!
